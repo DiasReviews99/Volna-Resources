@@ -72,6 +72,10 @@ else
 fi
 EOM
 
+echo "Flashing Boot Script"
+rm -rf /data/data/com.termux/files/usr/etc/bash.bashrc
+wget "https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Scripts/Boot/bash.bashrc" -P "/data/data/com.termux/files/usr/etc"
+
 echo "fixing shebang of $bin"
 termux-fix-shebang $bin
 echo "making $bin executable"
