@@ -12,4 +12,5 @@ echo "======================"
 sleep 3
 cd $HOME
 ls
+clear
 bash start-volna.sh
