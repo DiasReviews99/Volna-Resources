@@ -1,2 +1,1 @@
-# Volna-Resources
-This Repository was created to store "Volna" files
+This place is intended for storing scripts, kernels, images, etc. for "Volna"
