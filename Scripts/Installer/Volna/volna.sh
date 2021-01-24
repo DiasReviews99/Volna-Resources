@@ -2,12 +2,12 @@
 folder=volna-fs
 if [ -d "$folder" ]; then
 	first=1
-	echo "skipping downloading"
+	echo "Skipping Downloading"
 fi
 tarball="volna-rootfs.tar.xz"
 if [ "$first" != 1 ];then
 	if [ ! -f $tarball ]; then
-		echo "Download Rootfs, this may take a while base on your internet speed."
+		echo "Downloading Kernel"
 		case `dpkg --print-architecture` in
 		aarch64)
 			archurl="arm64" ;;
@@ -22,20 +22,20 @@ if [ "$first" != 1 ];then
 		x86)
 			archurl="i386" ;;
 		*)
-			echo "unknown architecture"; exit 1 ;;
+			echo "Unknown Architecture"; exit 1 ;;
 		esac
 		wget "https://github.com/DiasReviews99/Volna-Resources/releases/download/v1.0-alpha/volna-rootfs-${archurl}.tar.xz" -O $tarball
 	fi
 	cur=`pwd`
 	mkdir -p "$folder"
 	cd "$folder"
-	echo "Decompressing Rootfs, please be patient."
+	echo "Installing Kernel"
 	proot --link2symlink tar -xJf ${cur}/${tarball}||:
 	cd "$cur"
 fi
 mkdir -p volna-binds
 bin=start-volna.sh
-echo "writing launch script"
+echo "Writing Boot Script"
 cat > $bin <<- EOM
 #!/bin/bash
 cd \$(dirname \$0)
@@ -72,10 +72,12 @@ else
 fi
 EOM
 
+echo "Installing Kernel Resources"
+wget "https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Kernel_res/Volna/.bash_profile" -P "$folder/root/"
+
 echo "Flashing Boot Script"
 rm -rf /data/data/com.termux/files/usr/etc/bash.bashrc
 wget "https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Scripts/Boot/bash.bashrc" -P "/data/data/com.termux/files/usr/etc"
-
 echo "fixing shebang of $bin"
 termux-fix-shebang $bin
 echo "making $bin executable"
