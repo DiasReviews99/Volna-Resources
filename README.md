@@ -1,8 +1,4 @@
 This place is intended for storing scripts, kernels, images, etc. for "Volna"
-Minimum Requirements:
-CPU: Armhf, aarch64, i386, amd64 800MHz
-RAM: 1GB
-Memory: 0,96GB
 
 # Installing Volna
 To install, enter the following commands into the console
@@ -18,3 +14,8 @@ To install, enter the following commands into the console
 > chmod +x volna.sh
 
 > bash volna.sh
+
+# Minimum Requirememts
+CPU: Armhf, aarch64, i386, amd64 800MHz
+RAM: 1GB
+Memory: 0,96GB
