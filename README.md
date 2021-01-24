@@ -1,11 +1,11 @@
 This place is intended for storing scripts, kernels, images, etc. for "Volna"
 
 # Installing Volna
-===Minimum Requirements===
+---Minimum Requirements---
 CPU: Armhf, aarch64, i386, amd64 800MHz
 RAM: 1GB
 Memory: 0,96GB
-===========================
+--------------------------
 
 To install, enter the following commands into the console
 
