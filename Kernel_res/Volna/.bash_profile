@@ -1,7 +1,7 @@
 clear
-echo Installing Programms...
-apt install python2 -y
+echo Installing Programms..
 apt update
+apt install python2 -y
 apt install perl -y
 apt install cpanminus -y
 cpan App::cpanminus
