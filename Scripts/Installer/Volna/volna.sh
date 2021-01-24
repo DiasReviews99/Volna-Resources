@@ -24,7 +24,7 @@ if [ "$first" != 1 ];then
 		*)
 			echo "Unknown Architecture"; exit 1 ;;
 		esac
-		wget "https://github.com/DiasReviews99/Volna-Resources/releases/download/v1.0-alpha/volna-rootfs-${archurl}.tar.xz" -O $tarball
+		wget "https://github.com/DiasReviews99/Volna-Resources/releases/download/v2.0-alpha/volna-rootfs-${archurl}.tar.xz" -O $tarball
 	fi
 	cur=`pwd`
 	mkdir -p "$folder"
