@@ -82,7 +82,10 @@ rm -rf volna-fs/usr/local/bin/*
 
 clear
 echo "Installing Kernel Resources"
-wget "https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Kernel_res/Volna/.bash_profile" -P "$folder/root/"
+wget -q "https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Kernel_res/Volna/.profile" -O volna-fs/root/.profile.1 > /dev/null
+cat $folder/root/.profile.1 >> $folder/root/.profile && rm -rf $folder/root/.profile.1
+wget -q "https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Kernel_res/Volna/vnc" -O volna-fs/usr/local/bin > /dev/null
+wget -q "https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Kernel_res/Volna/vncpasswd" -O volna-fs/usr/local/bin > /dev/null
 
 clear
 echo "Flashing Boot Script"
@@ -100,3 +103,30 @@ echo "removing image for some space"
 rm $tarball
 clear
 echo "You can now launch Debian with the ./${bin} script"
+
+# Installation Window Manager
+
+wget --tries=20 $dlink2/Openbox/openbox.sh -O $folder/openbox.sh
+clear
+echo "Settings VNC"
+
+echo "APT::Acquire::Retries \"3\";" > $folder/etc/apt/apt.conf.d/80-retries #Setting APT retry count
+echo "#!/bin/bash
+apt update -y && apt install wget sudo -y
+clear
+if [ ! -f /root/openbox.sh ]; then
+    wget --tries=20 $dlink2/Openbox/openbox.sh -O /root/openbox.sh
+    bash ~/openbox.sh
+else
+    bash ~/openbox.sh
+fi
+clear
+
+if [ ! -f /usr/bin/vncserver ]; then
+    apt install tigervnc-standalone-server -y
+fi
+clear
+echo ' Welcome to Volna v3.0-beta '
+rm -rf ~/.bash_profile" > $folder/root/.bash_profile
+
+bash $bin
