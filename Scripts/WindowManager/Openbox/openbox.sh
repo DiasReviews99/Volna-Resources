@@ -41,7 +41,7 @@ apt install python2 -y
 apt install perl -y
 apt install cpanminus -y
 cpan App::cpanminus
-apt install build-eseential -y
+apt install build-essential -y
 cpanm Module::build-essential
 
 echo "You can now start vncserver by running vncserver-start"
