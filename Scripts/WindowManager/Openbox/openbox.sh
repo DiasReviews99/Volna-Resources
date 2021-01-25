@@ -34,6 +34,15 @@ wget https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Script
 chmod +x /usr/local/bin/vncserver-start
 chmod +x /usr/local/bin/vncserver-stop
 
+clear
+echo Installing Programms
+apt update
+apt install python2 -y
+apt install perl -y
+apt install cpanminus -y
+cpan App::cpanminus
+apt install build-eseential -y
+cpanm Module::build-essential
 
 echo "You can now start vncserver by running vncserver-start"
 echo ""
