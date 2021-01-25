@@ -1,4 +1,6 @@
 #!/data/data/com.termux/files/usr/bin/bash
+dlink="https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Scripts/DesktopEnvironment"
+dlink2="https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Scripts/WindowManager"
 folder=volna-fs
 if [ -d "$folder" ]; then
 	first=1
@@ -102,7 +104,7 @@ clear
 echo "removing image for some space"
 rm $tarball
 clear
-echo "You can now launch Debian with the ./${bin} script"
+echo "You can now launch Volna with the ./${bin} script"
 
 # Installation Window Manager
 
