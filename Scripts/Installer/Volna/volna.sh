@@ -84,10 +84,10 @@ rm -rf volna-fs/usr/local/bin/*
 
 clear
 echo "Installing Kernel Resources"
-wget "https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Kernel_res/Volna/.profile" -O volna-fs/root/.profile.1 > /dev/null
+wget -q https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Kernel_res/Volna/.profile -O volna-fs/root/.profile.1 > /dev/null
 cat $folder/root/.profile.1 >> $folder/root/.profile && rm -rf $folder/root/.profile.1
-wget "https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Kernel_res/Volna/vnc" -O volna-fs/usr/local/bin > /dev/null
-wget "https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Kernel_res/Volna/vncpasswd" -O volna-fs/usr/local/bin > /dev/null
+wget -q https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Kernel_res/Volna/vnc -O volna-fs/usr/local/bin > /dev/null
+wget -q https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Kernel_res/Volna/vncpasswd -O volna-fs/usr/local/bin > /dev/null
 
 chmod +x $folder/root/.profile
 chmod +x $folder/root/.bash_profile
