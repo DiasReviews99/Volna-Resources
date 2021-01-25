@@ -89,6 +89,11 @@ cat $folder/root/.profile.1 >> $folder/root/.profile && rm -rf $folder/root/.pro
 wget -q "https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Kernel_res/Volna/vnc" -O volna-fs/usr/local/bin > /dev/null
 wget -q "https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Kernel_res/Volna/vncpasswd" -O volna-fs/usr/local/bin > /dev/null
 
+chmod +x $folder/root/.profile
+chmod +x $folder/root/.bash_profile
+chmod +x $folder/usr/local/bin/vnc
+chmod +x $folder/usr/local/bin/vncpasswd
+
 clear
 echo "Flashing Boot Script"
 rm -rf /data/data/com.termux/files/usr/etc/bash.bashrc
