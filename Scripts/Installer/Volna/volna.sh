@@ -2,11 +2,13 @@
 folder=volna-fs
 if [ -d "$folder" ]; then
 	first=1
+        clear
 	echo "Skipping Downloading"
 fi
 tarball="volna-rootfs.tar.xz"
 if [ "$first" != 1 ];then
 	if [ ! -f $tarball ]; then
+                clear
 		echo "Downloading Kernel"
 		case `dpkg --print-architecture` in
 		aarch64)
@@ -22,6 +24,7 @@ if [ "$first" != 1 ];then
 		x86)
 			archurl="i386" ;;
 		*)
+                        clear
 			echo "Unknown Architecture"; exit 1 ;;
 		esac
 		wget "https://github.com/DiasReviews99/Volna-Resources/releases/download/v2.0-alpha/volna-rootfs-${archurl}.tar.xz" -O $tarball
@@ -29,12 +32,14 @@ if [ "$first" != 1 ];then
 	cur=`pwd`
 	mkdir -p "$folder"
 	cd "$folder"
+        clear
 	echo "Installing Kernel"
 	proot --link2symlink tar -xJf ${cur}/${tarball}||:
 	cd "$cur"
 fi
 mkdir -p volna-binds
 bin=start-volna.sh
+clear
 echo "Writing Boot Script"
 cat > $bin <<- EOM
 #!/bin/bash
@@ -72,16 +77,26 @@ else
 fi
 EOM
 
+mkdir -p volna-fs/var/tmp
+rm -rf volna-fs/usr/local/bin/*
+
+clear
 echo "Installing Kernel Resources"
 wget "https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Kernel_res/Volna/.bash_profile" -P "$folder/root/"
 
+clear
 echo "Flashing Boot Script"
 rm -rf /data/data/com.termux/files/usr/etc/bash.bashrc
 wget "https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Scripts/Boot/bash.bashrc" -P "/data/data/com.termux/files/usr/etc"
+
+clear
 echo "fixing shebang of $bin"
 termux-fix-shebang $bin
+clear
 echo "making $bin executable"
 chmod +x $bin
+clear
 echo "removing image for some space"
 rm $tarball
+clear
 echo "You can now launch Debian with the ./${bin} script"
