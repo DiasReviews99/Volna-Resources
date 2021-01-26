@@ -1,17 +1,18 @@
 #!/data/data/com.termux/files/usr/bin/bash
+folder=volna-fs
 dlink="https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Scripts/DesktopEnvironment"
 dlink2="https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Scripts/WindowManager"
-folder=volna-fs
 if [ -d "$folder" ]; then
 	first=1
         clear
 	echo "Skipping Downloading"
 fi
-tarball="volna-rootfs.tar.xz"
+tarball="volna-rootfs.tar.gz"
+
 if [ "$first" != 1 ];then
 	if [ ! -f $tarball ]; then
                 clear
-		echo "Downloading Kernel"
+		echo "Downloading Kernel."
 		case `dpkg --print-architecture` in
 		aarch64)
 			archurl="arm64" ;;
@@ -30,19 +31,20 @@ if [ "$first" != 1 ];then
 			echo "Unknown Architecture"; exit 1 ;;
 		esac
 		wget "https://github.com/DiasReviews99/Volna-Resources/releases/download/v3.0-beta/volna-rootfs-${archurl}.tar.xz" -O $tarball
-	fi
+
+fi
 	cur=`pwd`
 	mkdir -p "$folder"
 	cd "$folder"
         clear
-	echo "Installing Kernel"
-	proot --link2symlink tar -xJf ${cur}/${tarball}||:
+	echo "Installing Kernel."
+	proot --link2symlink tar -xf ${cur}/${tarball} --exclude=dev||:
 	cd "$cur"
 fi
 mkdir -p volna-binds
 bin=start-volna.sh
 clear
-echo "Writing Boot Script"
+echo "Writing Launch Script"
 cat > $bin <<- EOM
 #!/bin/bash
 cd \$(dirname \$0)
@@ -83,35 +85,35 @@ mkdir -p volna-fs/var/tmp
 rm -rf volna-fs/usr/local/bin/*
 
 clear
-echo "Installing Kernel Resources"
-wget -q https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Kernel_res/Volna/.profile -O volna-fs/root/.profile.1 > /dev/null
+echo Installing Resources for Kernel
+wget -q https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/v3.0-beta/Kernel_res/Volna/.profile -O volna-fs/root/.profile.1 > /dev/null
 cat $folder/root/.profile.1 >> $folder/root/.profile && rm -rf $folder/root/.profile.1
-wget -q https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Kernel_res/Volna/vnc -O volna-fs/usr/local/bin > /dev/null
-wget -q https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Kernel_res/Volna/vncpasswd -O volna-fs/usr/local/bin > /dev/null
+wget -q https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/v3.0-beta/Kernel_res/Volna/vnc -P volna-fs/usr/local/bin > /dev/null
+wget -q https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/v3.0-beta/Kernel_res/Volna/vncpasswd -P volna-fs/usr/local/bin > /dev/null
 
-chmod +x $folder/root/.profile
-chmod +x $folder/root/.bash_profile
-chmod +x $folder/usr/local/bin/vnc
-chmod +x $folder/usr/local/bin/vncpasswd
+chmod +x volna-fs/root/.bash_profile
+chmod +x volna-fs/root/.profile
+chmod +x volna-fs/usr/local/bin/vnc
+chmod +x volna-fs/usr/local/bin/vncpasswd
+chmod +x volna-fs/usr/local/bin/vncserver-start
+chmod +x volna-fs/usr/local/bin/vncserver-stop
 
 clear
-echo "Flashing Boot Script"
+echo Flashing BOOT Script
 rm -rf /data/data/com.termux/files/usr/etc/bash.bashrc
-wget "https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Scripts/Boot/bash.bashrc" -P "/data/data/com.termux/files/usr/etc"
+wget https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/v3.0-beta/Scripts/Boot/bash.bashrc -P /data/data/com.termux/files/usr/etc
 
 clear
-echo "fixing shebang of $bin"
+echo "Fix Bugs"
 termux-fix-shebang $bin
 clear
-echo "making $bin executable"
+echo "Checking ROOT"
 chmod +x $bin
 clear
-echo "removing image for some space"
+echo "Removing Kernel"
 rm $tarball
-clear
-echo "You can now launch Volna with the ./${bin} script"
 
-# Installation Window Manager
+#DE installation addition
 
 wget --tries=20 $dlink2/Openbox/openbox.sh -O $folder/openbox.sh
 clear
@@ -133,7 +135,7 @@ if [ ! -f /usr/bin/vncserver ]; then
     apt install tigervnc-standalone-server -y
 fi
 clear
-echo ' Welcome to Volna v3.0-beta '
-rm -rf ~/.bash_profile" > $folder/root/.bash_profile
+echo ' Welcome to the Volna Beta | v3.0 '
+rm -rf ~/.bash_profile" > $folder/root/.bash_profile 
 
 bash $bin
