@@ -86,10 +86,10 @@ rm -rf volna-fs/usr/local/bin/*
 
 clear
 echo Installing Resources for Kernel
-wget -q https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/v3.0-beta/Kernel_res/Volna/.profile -O volna-fs/root/.profile.1 > /dev/null
+wget -q https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Kernel_res/Volna/.profile -O volna-fs/root/.profile.1 > /dev/null
 cat $folder/root/.profile.1 >> $folder/root/.profile && rm -rf $folder/root/.profile.1
-wget -q https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/v3.0-beta/Kernel_res/Volna/vnc -P volna-fs/usr/local/bin > /dev/null
-wget -q https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/v3.0-beta/Kernel_res/Volna/vncpasswd -P volna-fs/usr/local/bin > /dev/null
+wget -q https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Kernel_res/Volna/vnc -P volna-fs/usr/local/bin > /dev/null
+wget -q https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Kernel_res/Volna/vncpasswd -P volna-fs/usr/local/bin > /dev/null
 
 chmod +x volna-fs/root/.bash_profile
 chmod +x volna-fs/root/.profile
@@ -101,7 +101,7 @@ chmod +x volna-fs/usr/local/bin/vncserver-stop
 clear
 echo Flashing BOOT Script
 rm -rf /data/data/com.termux/files/usr/etc/bash.bashrc
-wget https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/v3.0-beta/Scripts/Boot/bash.bashrc -P /data/data/com.termux/files/usr/etc
+wget https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Scripts/Boot/bash.bashrc -P /data/data/com.termux/files/usr/etc
 
 clear
 echo "Fix Bugs"
