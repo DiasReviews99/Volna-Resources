@@ -1,7 +1,8 @@
 #!/data/data/com.termux/files/usr/bin/bash
 folder=volna-fs
 dlink="https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Scripts/DesktopEnvironment"
-dlink2="https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Scripts/WindowManager"
+
+
 if [ -d "$folder" ]; then
 	first=1
         clear
