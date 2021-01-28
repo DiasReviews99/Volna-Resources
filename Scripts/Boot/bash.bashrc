@@ -12,7 +12,7 @@ echo
 echo "GRUB loading, please wait..."
 sleep 3
 clear
-echo "Booting `Volna, kernel 2.6.8.1-2-archurl ` "
+echo "Booting Volna, kernel 2.6.8.1-2-archurl"
 echo
 echo "root(hd0.0)"
 echo "Filesystem type is ext2fs, partition type 0x83"
