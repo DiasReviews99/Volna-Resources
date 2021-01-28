@@ -90,7 +90,7 @@ if [ -z "\$1" ];then
     exec \$command
 else
     \$command -c "\$com"
-fi
+fi 
 EOM
 
 mkdir -p volna-fs/var/tmp
