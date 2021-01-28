@@ -1,6 +1,9 @@
 #!/bin/bash
 clear
+echo "========================="
 echo "Installing Window Manager"
+echo "========================="
+sleep 1
 sleep 2
 sudo apt update -y
 apt-get install keyboard-configuration tzdata -y
@@ -26,42 +29,5 @@ XAUTHORITY=~/.Xauthority
 export XAUTHORITY
 dbus-launch openbox &
 dbus-launch cairo-dock & 
-feh --bg-fill /usr/share/wallpaper.jpg" > ~/.vnc/xstartup
+feh --bg-fill /usr/share/wallpaper.jpg" > ~/.vnc/xstartup-openbox
 chmod +x ~/.vnc/xstartup
-
-wget https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Scripts/DesktopEnvironment/VNC/vncserver-start -O /usr/local/bin/vncserver-start
-wget https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Scripts/DesktopEnvironment/VNC/vncserver-stop -O /usr/local/bin/vncserver-stop
-chmod +x /usr/local/bin/vncserver-start
-chmod +x /usr/local/bin/vncserver-stop
-
-clear
-echo Installing Programms
-apt update
-apt install python2 -y
-apt install perl -y
-apt install cpanminus -y
-cpan App::cpanminus
-apt install build-essential -y
-cpanm Module::build-essential
-
-echo "You can now start vncserver by running vncserver-start"
-echo ""
-echo "It will ask you to enter a password when first time starting it."
-echo ""
-echo "The VNC Server will be started at 127.0.0.1:5901"
-echo ""
-echo "You can connect to this address with a VNC Viewer you prefer"
-echo ""
-echo ""
-echo ""
-echo "Running vncserver-start"
-echo ""
-echo ""
-echo ""
-echo "To Kill VNC Server just run vncserver-stop"
-echo ""
-echo ""
-echo ""
-
-vncpasswd
-vncserver-start
