@@ -73,4 +73,11 @@ echo "Loading acpi"
 sleep 33
 echo "Loading pciehp and shpchp"
 sleep 3
-
+echo "Running usb.rc..."
+echo "usbmouse already loaded"
+echo "usbcore already loaded"
+echo "hci_usb already loaded"
+echo "Setting up IP spoofing protection..."
+echo "Configuring network interfaces..." 
+echo "Internet System Consortium DHCP Client V3.0.1rc14"
+echo "Copyright 2004 Internet System Consortium"
