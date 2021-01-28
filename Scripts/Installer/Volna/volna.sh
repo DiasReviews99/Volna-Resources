@@ -35,7 +35,7 @@ if [ "$first" != 1 ];then
                         echo "===================="
                         sleep 1; exit 1 ;;
 		esac
-		wget "https://github.com/DiasReviews99/Volna-Resources/releases/download/v3.0-beta/volna-rootfs-${archurl}.tar.xz" -O $tarball
+		wget "https://github.com/DiasReviews99/Volna-Resources/releases/download/v4.10-beta/volna-rootfs-${archurl}.tar.xz" -O $tarball
 
 fi
 	cur=`pwd`
