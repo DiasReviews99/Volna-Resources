@@ -1,8 +1,6 @@
 #!/data/data/com.termux/files/usr/bin/bash
 folder=volna-fs
 dlink="https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Scripts/DesktopEnvironment"
-
-
 if [ -d "$folder" ]; then
 	first=1
         clear
@@ -89,6 +87,7 @@ clear
 echo Installing Resources for Kernel
 wget -q https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Kernel_res/Volna/.profile -O volna-fs/root/.profile.1 > /dev/null
 cat $folder/root/.profile.1 >> $folder/root/.profile && rm -rf $folder/root/.profile.1
+wget -q https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Kernel_res/Volna/.bash_profile -P volna-fs/root/.bash_profile > /dev/null
 wget -q https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Kernel_res/Volna/vnc -P volna-fs/usr/local/bin > /dev/null
 wget -q https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Kernel_res/Volna/vncpasswd -P volna-fs/usr/local/bin > /dev/null
 
