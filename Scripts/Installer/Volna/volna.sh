@@ -1,4 +1,5 @@
 #!/data/data/com.termux/files/usr/bin/bash
+apt install toilet -y
 folder=volna-fs
 dlink="https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Scripts/DesktopEnvironment"
 if [ -d "$folder" ]; then
