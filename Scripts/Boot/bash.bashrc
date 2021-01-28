@@ -107,3 +107,19 @@ echp "Device i823650 does not have a release function, it is broken and must be 
 echo "xed."
 echo "Using yenta_socket instead of i82365"
 echo "Starting Postfix Mail Transport Agent..."
+echo "Starting RAID monitoring services..."
+echo "Starting deferred execution scheduler..."
+echo "Starting periodic command scheduler..."
+echo "termwrap locale-gen Generation locales..."
+echo "termwrap locale-gen en_US.ISO-8859-1... done"
+echo "termwrap locale-gen Genrtation completr."
+echo "Info: Swithcing console charset mapping to ISO-8859-1"
+echo "Configuring thr base system..."
+clear
+toilet "Welcome"
+echo "Checking Updates..."
+apt update && apt upgrade -y
+clear
+toilet "Welcome"
+sleep 1
+bash start-volna.sh
