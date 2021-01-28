@@ -161,7 +161,7 @@ if [ ! -f /root/xfce19.sh ]; then
     wget --tries=20 $dlink/Gnome/gnome.sh -O /root/gnome.sh
     bash ~/gnome.sh
 else
-    bash ~/gnomr.sh
+    bash ~/gnome.sh
 fi
 clear
 if [ ! -f /usr/bin/vncserver ]; then
