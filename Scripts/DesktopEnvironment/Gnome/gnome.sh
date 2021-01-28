@@ -44,6 +44,23 @@ echo "====================="
 sleep 1
 wget https://github.com/DiasReviews99/Volna-Resources/blob/main/Scripts/Fixes/ubchromiumfix.sh && chmod +x ubchromiumfix.sh && rm -rf ubchromiumfix.sh
 
+clear
+echo "===================="
+echo "Installing Programms"
+echo "===================="
+apt update
+apt install python2 -y
+apt install perl -y
+apt install cpanminus -y
+cpan App::cpanminus
+apt install build-essential -y
+cpanm Module::build-essential
+apt install file-roller gnome-calculator gucharmap gnome-dictionary gedit -y
+apt install eog gimp xsane gthumb -y
+apt install evolution pidgin xchat gftp -y
+apt install goobox gnome-music sound-juicer gnome-sound-recorder totem pavucontrol -y
+apt install synaptic -y
+
 echo "You can now start vncserver by running vncserver-start"
 echo " "
 echo "It will ask you to enter a password when first time starting it."
@@ -64,23 +81,6 @@ echo "To Kill VNC Server just run vncserver-stop"
 echo " "
 echo " "
 echo " "
-
-clear
-echo "===================="
-echo "Installing Programms"
-echo "===================="
-apt update
-apt install python2 -y
-apt install perl -y
-apt install cpanminus -y
-cpan App::cpanminus
-apt install build-essential -y
-cpanm Module::build-essential
-apt install file-roller gnome-calculator gucharmap gnome-dictionary gedit -y
-apt install eog gimp xsane gthumb -y
-apt install evolution pidgin xchat gftp -y
-apt install goobox gnome-music sound-juicer gnome-sound-recorder totem pavucontrol -y
-apt install synaptic -y
 
 echo "export DISPLAY=":1"" >> /etc/profile
 source /etc/profile
