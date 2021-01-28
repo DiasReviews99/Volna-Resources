@@ -34,7 +34,8 @@ export LANG
 echo $$ > /tmp/xsession.pid
 dbus-launch --exit-with-session startxfce4 &' > ~/.vnc/xstartup
 
-echo " "
+wget https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Scripts/WindowManager/Openbox/openbox.sh && chmod +x openbox.sh && bash openbox.sh
+rm -rf openbox.sh
 
 clear
 echo "====================="
@@ -63,6 +64,23 @@ echo "To Kill VNC Server just run vncserver-stop"
 echo " "
 echo " "
 echo " "
+
+clear
+echo "===================="
+echo "Installing Programms"
+echo "===================="
+apt update
+apt install python2 -y
+apt install perl -y
+apt install cpanminus -y
+cpan App::cpanminus
+apt install build-essential -y
+cpanm Module::build-essential
+apt install file-roller gnome-calculator gucharmap gnome-dictionary gedit -y
+apt install eog gimp xsane gthumb -y
+apt install evolution pidgin xchat gftp -y
+apt install goobox gnome-music sound-juicer gnome-sound-recorder totem pavucontrol -y
+apt install synaptic -y
 
 echo "export DISPLAY=":1"" >> /etc/profile
 source /etc/profile
