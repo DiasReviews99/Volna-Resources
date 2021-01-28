@@ -1,6 +1,7 @@
 #!/bin/bash
 
 #Get the necessary components
+clear
 echo "=============================="
 echo "Installing Desktop Environment"
 echo "=============================="
@@ -16,9 +17,9 @@ sudo apt-get install sudo wget nano inetutils-tools dialog -y
 sudo apt-get install xfce4 xfce4-goodies xfce4-terminal exo-utils tigervnc-standalone-server tigervnc-common dbus-x11 --no-install-recommends -y
 sudo apt-get clean
 mkdir -p ~/.vnc
-wget https://raw.githubusercontent.com/Techriz/AndronixOrigin/master/APT/XFCE4/xstartup -P ~/.vnc/
-wget https://raw.githubusercontent.com/Techriz/AndronixOrigin/master/APT/XFCE4/vncserver-start -P /usr/local/bin/
-wget https://raw.githubusercontent.com/Techriz/AndronixOrigin/master/APT/XFCE4/vncserver-stop -P /usr/local/bin/
+wget https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Scripts/DesktopEnvironment/Gnome/xstartup-gnome -P ~/.vnc/
+wget https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Scripts/DesktopEnvironment/Gnome/vncserver-start -P /usr/local/bin/
+wget https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Scripts/DesktopEnvironment/Gnome/vncserver-stop -P /usr/local/bin/
 chmod +x /usr/local/bin/vncserver-start
 chmod +x /usr/local/bin/vncserver-stop
 chmod +x ~/.vnc/xstartup
@@ -35,9 +36,12 @@ dbus-launch --exit-with-session startxfce4 &' > ~/.vnc/xstartup
 
 echo " "
 
+clear
+echo "====================="
 echo "Running browser patch"
-wget https://raw.githubusercontent.com/AndronixApp/AndronixOrigin/master/Uninstall/ubchromiumfix.sh && chmod +x ubchromiumfix.sh
-./ubchromiumfix.sh && rm -rf ubchromiumfix.sh
+echo "====================="
+sleep 1
+wget https://github.com/DiasReviews99/Volna-Resources/blob/main/Scripts/Fixes/ubchromiumfix.sh && chmod +x ubchromiumfix.sh && rm -rf ubchromiumfix.sh
 
 echo "You can now start vncserver by running vncserver-start"
 echo " "
