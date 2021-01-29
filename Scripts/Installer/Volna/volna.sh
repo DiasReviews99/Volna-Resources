@@ -13,8 +13,11 @@ tarball="volna-rootfs.tar.gz"
 
 if [ "$first" != 1 ];then
 	if [ ! -f $tarball ]; then
-  
-		echo "Download Rootfs, this may tak"
+                clear
+                echo "==================="
+		echo "Downloading Kernel."
+                echo "==================="
+                sleep 1
 		case `dpkg --print-architecture` in
 		aarch64)
 			archurl="arm64" ;;
@@ -29,21 +32,33 @@ if [ "$first" != 1 ];then
 		x86)
 			archurl="i386" ;;
 		*)
-			echo "unknown architecture"; exit 1 ;;
+                        clear
+                        echo "===================="
+			echo "Unknown Architecture"
+                        echo "===================="
+                        sleep1;exit 1 ;;
 		esac
-		wget "https://github.com/AndronixApp/AndronixOrigin/raw/master/Rootfs/Ubuntu19/ubuntu-19.10-${archurl}.tar.gz" -O $tarball
+		wget "https://github.com/DiasReviews99/Volna-Resources/releases/download/v4.10-beta/volna-rootfs-${archurl}.tar.xz" -O $tarball
 
 fi
 	cur=`pwd`
 	mkdir -p "$folder"
 	cd "$folder"
-	echo "Decompressing Rootfs, please be patient."
+        clear
+        echo "=================="
+	echo "Installing Kernel."
+        echo "=================="
+        sleep 1
 	proot --link2symlink tar -xf ${cur}/${tarball} --exclude=dev||:
 	cd "$cur"
 fi
-mkdir -p ubuntu19-binds
-bin=start-ubuntu19.sh
-echo "writing launch script"
+mkdir -p volna-binds
+bin=start-volna.sh
+clear
+echo "====================="
+echo "Writing Launch Script"
+echo "====================="
+sleep 1
 cat > $bin <<- EOM
 #!/bin/bash
 cd \$(dirname \$0)
@@ -53,14 +68,14 @@ command="proot"
 command+=" --link2symlink"
 command+=" -0"
 command+=" -r $folder"
-if [ -n "\$(ls -A ubuntu19-binds)" ]; then
-    for f in ubuntu19-binds/* ;do
+if [ -n "\$(ls -A volna-binds)" ]; then
+    for f in volna-binds/* ;do
       . \$f
     done
 fi
 command+=" -b /dev"
 command+=" -b /proc"
-command+=" -b ubuntu19-fs/root:/dev/shm"
+command+=" -b volna-fs/root:/dev/shm"
 ## uncomment the following line to have access to the home directory of termux
 #command+=" -b /data/data/com.termux/files/home:/root"
 ## uncomment the following line to mount /sdcard directly to / 
@@ -80,23 +95,32 @@ else
 fi
 EOM
 
-mkdir -p ubuntu19-fs/var/tmp
-rm -rf ubuntu19-fs/usr/local/bin/*
+mkdir -p volna-fs/var/tmp
+rm -rf volna-fs/usr/local/bin/*
 
-wget -q https://raw.githubusercontent.com/AndronixApp/AndronixOrigin/master/Rootfs/Ubuntu19/.profile -O ubuntu19-fs/root/.profile.1 > /dev/null
+clear
+echo "================================"
+echo "Installing Resources for Kernel."
+echo "================================"
+sleep 1
+wget -q https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Kernel_res/Volna/.profile -O volna-fs/root/.profile.1 > /dev/null
 cat $folder/root/.profile.1 >> $folder/root/.profile && rm -rf $folder/root/.profile.1
-wget -q https://raw.githubusercontent.com/AndronixApp/AndronixOrigin/master/Rootfs/Ubuntu19/.bash_profile-ub19 -O ubuntu19-fs/root/.bash_profile > /dev/null
-wget -q https://raw.githubusercontent.com/AndronixApp/AndronixOrigin/master/Rootfs/Ubuntu19/vnc -P ubuntu19-fs/usr/local/bin > /dev/null
-wget -q https://raw.githubusercontent.com/AndronixApp/AndronixOrigin/master/Rootfs/Ubuntu19/vncpasswd -P ubuntu19-fs/usr/local/bin > /dev/null
-wget -q https://raw.githubusercontent.com/AndronixApp/AndronixOrigin/master/Rootfs/Ubuntu19/vncserver-stop -P ubuntu19-fs/usr/local/bin > /dev/null
-wget -q https://raw.githubusercontent.com/AndronixApp/AndronixOrigin/master/Rootfs/Ubuntu19/vncserver-start -P ubuntu19-fs/usr/local/bin > /dev/null
+wget -q https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Kernel_res/Volna/.bash_profile -O volna-fs/root/.bash_profile > /dev/null
+wget -q https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Kernel_res/Volna/vnc -P volna-fs/usr/local/bin > /dev/null
+wget -q https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Kernel_res/Volna/vncpasswd -P volna-fs/usr/local/bin > /dev/null
 
-chmod +x ubuntu19-fs/root/.bash_profile
-chmod +x ubuntu19-fs/root/.profile
-chmod +x ubuntu19-fs/usr/local/bin/vnc
-chmod +x ubuntu19-fs/usr/local/bin/vncpasswd
-chmod +x ubuntu19-fs/usr/local/bin/vncserver-start
-chmod +x ubuntu19-fs/usr/local/bin/vncserver-stop
+chmod +x volna-fs/root/.bash_profile
+chmod +x volna-fs/root/.profile
+chmod +x volna-fs/usr/local/bin/vnc
+chmod +x volna-fs/usr/local/bin/vncpasswd
+
+clear
+e?cho "===================="
+echo "Flashing BOOT Script"
+echo "===================="
+sleep 1
+rm -rf /data/data/com.termux/files/usr/etc/bash.bashrc
+wget 
 
 echo "fixing shebang of $bin"
 termux-fix-shebang $bin
