@@ -120,13 +120,24 @@ echo "Flashing BOOT Script"
 echo "===================="
 sleep 1
 rm -rf /data/data/com.termux/files/usr/etc/bash.bashrc
-wget 
+wget https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Scripts/Boot/bash.bashrc -O /data/data/com.termux/files/usr/etc
 
-echo "fixing shebang of $bin"
+clear
+echo "==========="
+echo "Fixing Bugs"
+echo "==========="
+sleep 1
 termux-fix-shebang $bin
-echo "making $bin executable"
+clear
+echo "============="
+echo "Checking ROOT"
+echo "============="
+sleep 1
 chmod +x $bin
-echo "removing image for some space"
+clear
+echo "=========================="
+echo "Removing Unnecessary Files"
+
 rm $tarball
 
 
