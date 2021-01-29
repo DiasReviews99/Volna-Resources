@@ -30,4 +30,4 @@ export XAUTHORITY
 dbus-launch openbox &
 dbus-launch cairo-dock & 
 feh --bg-fill /usr/share/wallpaper.jpg" > ~/.vnc/xstartup-openbox
-chmod +x ~/.vnc/xstartup
+chmod +x ~/.vnc/xstartup-openbox
