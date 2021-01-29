@@ -137,15 +137,18 @@ chmod +x $bin
 clear
 echo "=========================="
 echo "Removing Unnecessary Files"
-
+echo "=========================="
+sleep 1
 rm $tarball
-
 
 #DE installation addition
 
-wget --tries=20 $dlink/XFCE4/xfce19.sh -O $folder/root/xfce19.sh
+wget --tries=20 $dlink/Gnome/gnome.sh -O $folder/root/gnome.sh
 clear
-echo "Setting up the installation of XFCE VNC"
+echo "============"
+echo "Settings VNC"
+echo "============"
+sleep 1
 
 echo "APT::Acquire::Retries \"3\";" > $folder/etc/apt/apt.conf.d/80-retries #Setting APT retry count
 touch $folder/root/.hushlogin
@@ -156,22 +159,16 @@ mkdir -p ~/.vnc
 apt update -y && apt install sudo dialog wget -y > /dev/null
 clear
 if [ ! -f /root/xfce19.sh ]; then
-    wget --tries=20 $dlink/XFCE4/xfce19.sh -O /root/xfce19.sh
-    bash ~/xfce19.sh
+    wget --tries=20 $dlink/Gnome/gnome.sh -O /root/gnome.sh
+    bash ~/gnome.sh
 else
-    bash ~/xfce19.sh
+    bash ~/gnome.sh
 fi
 clear
-if [ ! -f /usr/local/bin/vncserver-start ]; then
-    wget --tries=20  $dlink/XFCE4/vncserver-start -O /usr/local/bin/vncserver-start 
-    wget --tries=20 $dlink/XFCE4/vncserver-stop -O /usr/local/bin/vncserver-stop
-    chmod +x /usr/local/bin/vncserver-stop
-    chmod +x /usr/local/bin/vncserver-start
-fi
 if [ ! -f /usr/bin/vncserver ]; then
     apt install tigervnc-standalone-server -y
 fi
-rm -rf /root/xfce19.sh
+rm -rf /root/gnome.sh
 rm -rf ~/.bash_profile" > $folder/root/.bash_profile 
 
 bash $bin
