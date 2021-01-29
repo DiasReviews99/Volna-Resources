@@ -115,7 +115,7 @@ chmod +x volna-fs/usr/local/bin/vnc
 chmod +x volna-fs/usr/local/bin/vncpasswd
 
 clear
-e?cho "===================="
+echo "===================="
 echo "Flashing BOOT Script"
 echo "===================="
 sleep 1
