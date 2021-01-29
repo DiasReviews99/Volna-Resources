@@ -22,7 +22,7 @@ wget https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Script
 wget https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Scripts/DesktopEnvironment/Gnome/vncserver-stop -P /usr/local/bin/
 chmod +x /usr/local/bin/vncserver-start
 chmod +x /usr/local/bin/vncserver-stop
-chmod +x ~/.vnc/xstartup
+chmod +x ~/.vnc/xstartup-gnome
 
 echo '#!/bin/bash
 [ -r $HOME/.Xresources ] && xrdb $HOME/.Xresources
@@ -42,7 +42,7 @@ echo "====================="
 echo "Running browser patch"
 echo "====================="
 sleep 1
-wget https://github.com/DiasReviews99/Volna-Resources/blob/main/Scripts/Fixes/ubchromiumfix.sh && chmod +x ubchromiumfix.sh && rm -rf ubchromiumfix.sh
+wget https://github.com/DiasReviews99/Volna-Resources/blob/main/Scripts/Fixes/ubchromiumfix.sh && chmod +x ubchromiumfix.sh && bash ubchromiumfix.sh && rm -rf ubchromiumfix.sh
 
 clear
 echo "===================="
