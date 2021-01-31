@@ -42,7 +42,7 @@ echo "====================="
 echo "Running browser patch"
 echo "====================="
 sleep 1
-wget https://github.com/DiasReviews99/Volna-Resources/blob/main/Scripts/Fixes/ubchromiumfix.sh && chmod +x ubchromiumfix.sh && bash ubchromiumfix.sh && rm -rf ubchromiumfix.sh
+wget https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Scripts/Fixes/ubchromiumfix.sh && chmod +x ubchromiumfix.sh && bash ubchromiumfix.sh && rm -rf ubchromiumfix.sh
 
 clear
 echo "===================="
