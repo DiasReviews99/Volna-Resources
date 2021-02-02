@@ -121,5 +121,6 @@ echo "Checking Updates..."
 apt update && apt upgrade -y
 clear
 toilet "Welcome"
+mpv /sdcard/scifi.mp3
 sleep 1
 bash start-volna.sh
