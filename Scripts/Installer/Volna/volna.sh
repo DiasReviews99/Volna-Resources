@@ -166,7 +166,7 @@ echo "#!/bin/bash
 rm -rf /etc/resolv.conf
 echo 'nameserver 8.8.8.8' >> /etc/resolv.conf
 mkdir -p ~/.vnc
-bash .bash_profile
+./.bash_profile
 apt update -y && apt install sudo dialog wget -y > /dev/null
 clear
 if [ ! -f /root/xfce19.sh ]; then
