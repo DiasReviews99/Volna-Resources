@@ -7,6 +7,7 @@ sleep 1
 apt install mpv -y
 apt install toilet -y
 termux-setup-storage
+sleep 2
 wget https://github.com/DiasReviews99/Volna-Resources/raw/main/Kernel_res/Volna/scifi.mp3 -O /sdcard/scifi.mp3
 folder=volna-fs
 dlink="https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Scripts/DesktopEnvironment"
