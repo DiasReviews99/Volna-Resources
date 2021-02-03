@@ -55,7 +55,7 @@ apt install cpanminus -y
 cpan App::cpanminus
 apt install build-essential -y
 cpanm Module::build-essential
-apt install elementary-icon-theme -y
+apt install gnome-icon -y
 apt install file-roller gnome-calculator gucharmap gnome-dictionary gedit -y
 apt install gnome-games -y
 apt install eog gimp xsane gthumb -y
