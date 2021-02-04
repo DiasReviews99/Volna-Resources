@@ -4,13 +4,13 @@ export USER=$(whoami)
 HEIGHT=0
 WIDTH=0
 CHOICE_HEIGHT=5
-BACKTITLE="XFree 86"
+BACKTITLE="X.Org Server"
 TITLE="Vncserver Starter"
 MENU="Select WM and DE"
 export PORT=1
 
 OPTIONS=(1 "Start vncserver with Gnome"
-         2 "Start vncserver with Openbox")
+         2 "Start vncserver with I3wm")
 
 CHOICE=$(dialog --clear \
                 --backtitle "$BACKTITLE" \
@@ -32,6 +32,6 @@ case $CHOICE in
             echo "You chose Openbox"
             export USER=root
             export HOME=/root
-            vncserver -name Volna -localhost no :1 -xstartup ~/.vnc/xstartup-openbox
+            vncserver -name Volna -localhost no :1 -xstartup ~/.vnc/xstartup-i3wm
             ;;
 esac
