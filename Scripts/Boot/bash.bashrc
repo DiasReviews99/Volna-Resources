@@ -14,7 +14,7 @@ sleep 3
 clear
 echo "Booting Volna, kernel 2.6.10-archurl"
 echo ""
-echo "root (hd0.0)"
+echo "root hd0.0"
 echo "Filesystem type is ext2fs, partition type 0x83"
 echo "kernel /boot/vmlinuz-2.6.10-5-archurl root=/dev/hda1 ro quiet splash"
 echo "[Linux-bzImage, setup=0x1600, size=0x1209f6]"
@@ -24,7 +24,7 @@ echo "savedefault"
 echo "boot"
 echo "Uncompressing Linux... Ok. booting the kernel."
 sleep 3
-echo "audit(1535118568.877:0): initialized"
+echo "audit1535118568.877:0: initialized"
 echo "Starting Volna..."
 sleep 10
 echo "Mounting a tmpfs over /dev..."
