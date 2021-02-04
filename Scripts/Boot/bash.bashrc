@@ -69,6 +69,6 @@ clear
 toilet "Welcome"
 sleep 1
 clear
-toilet -f mono12 -F metal "Volna"
+toilet -f mono12 -F metal Volna
 sleep 3
 bash start-volna.sh
