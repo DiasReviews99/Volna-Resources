@@ -66,7 +66,7 @@ echo "Configuring the base system..."
 sleep 4
 apt update && apt upgrade -y
 clear
-toilet "Welcome"
+toilet Welcome
 sleep 1
 clear
 toilet -f mono12 -F metal Volna
