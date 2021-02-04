@@ -115,7 +115,6 @@ echo "================================"
 sleep 1
 wget -q https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Kernel_res/Volna/.profile -O volna-fs/root/.profile.1 > /dev/null
 cat $folder/root/.profile.1 >> $folder/root/.profile && rm -rf $folder/root/.profile.1
-wget -q https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Kernel_res/Volna/.bash_profile -O volna-fs/root/.bash_profile > /dev/null
 wget -q https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Kernel_res/Volna/vnc -P volna-fs/usr/local/bin > /dev/null
 wget -q https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Kernel_res/Volna/vncpasswd -P volna-fs/usr/local/bin > /dev/null
 
@@ -180,6 +179,8 @@ groupadd --gid 50110 permagrp3
 groupadd --gid 99909997 permagrp4
 groupadd --gid 20195 permagrp5
 groupadd --gid 50195 permagrp6
+wget https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Kernel_res/Volna/firstrun -O /usr/share/volna/firstrun
+bash /usr/share/volna/firstrun
 touch ~/.hushlogin
 apt update -y && apt install sudo dialog wget -y > /dev/null
 clear
