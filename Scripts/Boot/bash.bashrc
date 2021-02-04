@@ -40,3 +40,35 @@ echo "Loading modules..."
 echo "Creating device-mapper devices..."
 echo "Starting RAID devices..."
 echo "Setting up LVM Volume Groups..."
+echo "Starting Enterprise Volume Management System..."
+echo "Checking all file systems..."
+echo "Mounting local filesystems..."
+echo "Running 0dns-down to make sure resolv.conf is ok..."
+echo "Intializing ifupdown state..."
+echo "Starting hotplug subsystem..."
+sleep 4
+echo "Configuring network interfcaes..."
+echo "Setting up general console font..."
+echo "Setting the System Clock using the Hardware Clock as refernce..."
+echo "Synchronizing clock to ntp.volnalinux.org..."
+echo "ror : Temporary failure in name resolution"
+echo "Intializing random number generator..."
+echo "Entering runlevel: 2"
+echo "Starting system log daemon..."
+echo "Starting kernel log daemon..."
+echo "Setting up ALSA..."
+echo "Loading Mixers"
+echo "Starting internet superserver..."
+echo "Starting Postfix Mail Transport Agent..."
+echo "Starting deferred execution scheduler..."
+echo "Starting periodic command scheduler..."
+echo "Configuring the base system..."
+sleep 4
+apt update && apt upgrade -y
+clear
+toilet "Welcome"
+sleep 1
+clear
+toilet -f mono12 -F metal "Volna"
+sleep 3
+bash start-volna.sh
