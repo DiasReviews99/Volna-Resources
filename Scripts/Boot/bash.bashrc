@@ -19,7 +19,7 @@ echo "Filesystem type is ext2fs, partition type 0x83"
 echo "kernel /boot/vmlinuz-2.6.10-5-archurl root=/dev/hda1 ro quiet splash"
 echo "[Linux-bzImage, setup=0x1600, size=0x1209f6]"
 echo "initrd /boot/initrd.img-2.6.10-5-archurl"
-echo "[Linux-initrd @ 0xfaaa000, 0x426000 bytes]
+echo "[Linux-initrd @ 0xfaaa000, 0x426000 bytes]"
 echo "savedefault"
 echo "boot"
 echo "Uncompressing Linux... Ok. booting the kernel."
@@ -66,9 +66,9 @@ echo "Configuring the base system..."
 sleep 4
 apt update && apt upgrade -y
 clear
-toilet Welcome
+toilet "Welcome"
 sleep 1
 clear
-toilet -f mono12 -F metal Volna
+toilet -f mono12 -F metal "Volna"
 sleep 3
 bash start-volna.sh
