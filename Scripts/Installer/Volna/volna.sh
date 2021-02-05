@@ -181,7 +181,6 @@ groupadd --gid 50110 permagrp3
 groupadd --gid 99909997 permagrp4
 groupadd --gid 20195 permagrp5
 groupadd --gid 50195 permagrp6
-bash /usr/share/volna/firstrun
 touch ~/.hushlogin
 apt update -y && apt install sudo dialog wget -y > /dev/null
 clear
