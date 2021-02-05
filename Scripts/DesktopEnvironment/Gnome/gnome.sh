@@ -90,7 +90,3 @@ echo " "
 
 vncpasswd
 vncserver-start
-
-sleep 3
-
-bash /usr/share/volna/firstrun
