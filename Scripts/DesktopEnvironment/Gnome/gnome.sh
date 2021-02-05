@@ -63,6 +63,9 @@ apt install evolution pidgin xchat gftp -y
 apt install goobox gnome-music sound-juicer gnome-sound-recorder totem pavucontrol -y
 apt install synaptic -y
 
+echo "export DISPLAY=":1"" >> /etc/profile
+source /etc/profile
+
 echo "You can now start vncserver by running vncserver-start"
 echo " "
 echo "It will ask you to enter a password when first time starting it."
@@ -83,9 +86,11 @@ echo "To Kill VNC Server just run vncserver-stop"
 echo " "
 echo " "
 echo " "
-
-echo "export DISPLAY=":1"" >> /etc/profile
-source /etc/profile
+echo " "
 
 vncpasswd
 vncserver-start
+
+sleep 3
+
+bash /usr/share/volna/firstrun
