@@ -34,8 +34,8 @@ export LANG
 echo $$ > /tmp/xsession.pid
 dbus-launch --exit-with-session startxfce4 &' > ~/.vnc/xstartup
 
-wget https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Scripts/WindowManager/Openbox/openbox.sh && chmod +x openbox.sh && bash openbox.sh
-rm -rf openbox.sh
+wget https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Scripts/WindowManager/I3/i3.sh && chmod +x i3.sh && bash i3.sh
+rm -rf i3.sh
 
 clear
 echo "====================="
