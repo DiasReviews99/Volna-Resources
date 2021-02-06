@@ -29,7 +29,7 @@ case $CHOICE in
             vncserver -name Volna -localhost no :1 -xstartup ~/.vnc/xstartup-gnome
             ;;
         2)
-            echo "You chose Openbox"
+            echo "You chose I3wm"
             export USER=root
             export HOME=/root
             vncserver -name Volna -localhost no :1 -xstartup ~/.vnc/xstartup-i3wm
