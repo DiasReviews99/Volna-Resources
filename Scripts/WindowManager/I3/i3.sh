@@ -8,7 +8,7 @@ sleep 2
 sudo apt update -y
 apt-get install keyboard-configuration -y
 apt-get install sudo wget dialog -y
-sudo apt install i3 tigervnc-standalone-server wget nano dbus-x11 xfce4-terminal pcmanfm cairo-dock libexo-1-0 tigervnc-common --no-install-recommends -y
+sudo apt install i3 tigervnc-standalone-server wget nano dbus-x11 xorg xterm xfce4-terminal pcmanfm shotwell feh cairo-dock libexo-1-0 tigervnc-common --no-install-recommends -y
 clear
 
 read -p "Want to install default browser ? (y/n)" choice
@@ -29,4 +29,4 @@ export ~/.Xauthority
 dbus-launch i3 &
 dbus-launch cairo-dock &
 feh --bg-fill /usr/share/wallpaper.jpg " > ~/.vnc/xstartup-i3wm
-chmod +x ~/.vnc/xstartup
+chmod +x ~/.vnc/xstartup-i3wm
