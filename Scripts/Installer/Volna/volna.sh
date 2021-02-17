@@ -115,8 +115,6 @@ echo "================================"
 sleep 1
 wget -q https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Kernel_res/Volna/.profile -O volna-fs/root/.profile.1 > /dev/null
 cat $folder/root/.profile.1 >> $folder/root/.profile && rm -rf $folder/root/.profile.1
-mkdir -p volna-fs/usr/share/volna/
-wget -q https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Kernel_res/Volna/firstrun -O volna-fs/usr/local/bin/newuser
 wget -q https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Kernel_res/Volna/vnc -P volna-fs/usr/local/bin > /dev/null
 wget -q https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Kernel_res/Volna/vncpasswd -P volna-fs/usr/local/bin > /dev/null
 
@@ -124,7 +122,6 @@ chmod +x volna-fs/root/.bash_profile
 chmod +x volna-fs/root/.profile
 chmod +x volna-fs/usr/local/bin/vnc
 chmod +x volna-fs/usr/local/bin/vncpasswd
-chmod +x volna-fs/usr/local/bin/newuser
 
 clear
 echo "===================="
