@@ -129,7 +129,7 @@ echo "Flashing BOOT Script"
 echo "===================="
 sleep 1
 rm -rf /data/data/com.termux/files/usr/etc/bash.bashrc
-wget https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Scripts/Boot/bash.bashrc -O /data/data/com.termux/files/usr/etc/bash.bashrc
+wget https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Scripts/Boot/Volna/bash.bashrc -O /data/data/com.termux/files/usr/etc/bash.bashrc
 
 clear
 echo "==========="
