@@ -113,10 +113,10 @@ echo "================================"
 echo "Installing Resources for Kernel."
 echo "================================"
 sleep 1
-wget -q https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Kernel_res/Volna-K/.profile -O volna-fs/root/.profile.1 > /dev/null
+wget -q https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Kernel_res/Volna-K/.profile -O volnak-fs/root/.profile.1 > /dev/null
 cat $folder/root/.profile.1 >> $folder/root/.profile && rm -rf $folder/root/.profile.1
-wget -q https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Kernel_res/Volna-K/vnc -P volna-fs/usr/local/bin > /dev/null
-wget -q https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Kernel_res/Volna-K/vncpasswd -P volna-fs/usr/local/bin > /dev/null
+wget -q https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Kernel_res/Volna-K/vnc -P volnak-fs/usr/local/bin > /dev/null
+wget -q https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Kernel_res/Volna-K/vncpasswd -P volnak-fs/usr/local/bin > /dev/null
 
 chmod +x volnak-fs/root/.bash_profile
 chmod +x volnak-fs/root/.profile
