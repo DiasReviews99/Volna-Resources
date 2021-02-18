@@ -70,5 +70,6 @@ toilet "Welcome"
 sleep 1
 clear
 toilet -f mono12 -F metal "Volna"
+mpv /sdcard/scifi.mp3
 sleep 3
 bash start-volna.sh
