@@ -15,18 +15,8 @@ To install, enter the following commands into the console
 
 > bash volna.sh
 
-# Installing Volna-k
+# Installing Volna-K
 To install, enter the following commands into the console
-
-> apt update && apt upgrade -y
-
-> pkg install wget
-
-> apt install openssl-tool proot -y && hash -r
-
-> wget # Installing Volna
-To install, enter the following commands into the console
-
 > apt update && apt upgrade -y
 
 > pkg install wget
