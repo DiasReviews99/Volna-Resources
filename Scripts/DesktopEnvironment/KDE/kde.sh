@@ -22,7 +22,7 @@ wget https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Script
 wget https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Scripts/DesktopEnvironment/KDE/vncserver-stop -P /usr/local/bin/
 chmod +x /usr/local/bin/vncserver-start
 chmod +x /usr/local/bin/vncserver-stop
-chmod +x ~/.vnc/xstartup-gnome
+chmod +x ~/.vnc/xstartup-kde
 
 echo '#!/bin/bash
 [ -r $HOME/.Xresources ] && xrdb $HOME/.Xresources
@@ -35,9 +35,18 @@ echo $$ > /tmp/xsession.pid
 dbus-launch --exit-with-session startxfce4 &' > ~/.vnc/xstartup
 
 clear
+echo "====================="
+echo "Running Browser Patch
+echo "====================="
+sleep 1
+wget https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Scripts/Fixes/ubchromiumfix.sh && chmod +x ubchromiumfix.sh && bash ubchromiumfix.sh
+rm -rf ubchromiumfix.sh
+
+clear
 echo "===================="
 echo "Installing Programms"
 echo "===================="
+sleep 1
 apt update
 apt install python2 -y
 apt install perl -y
@@ -46,7 +55,7 @@ cpan App::cpanminus
 apt install build-essential -y
 cpanm Module::build-essential
 apt install elementary-icon-theme -y
-apt install ark digikam dolphin gwenview k3b kdenlive kdevelop kolourpaint konqueror konsole kontact krusader kstars ktorrent okular -y
+apt install evolution -y
 
 echo "export DISPLAY=":1"" >> /etc/profile
 source /etc/profile
