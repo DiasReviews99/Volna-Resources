@@ -59,7 +59,7 @@ apt install gnome-icon-theme -y
 apt install file-roller gnome-calculator gucharmap gnome-dictionary gedit -y
 apt install gnome-games -y
 apt install eog gimp xsane gthumb -y
-apt install evolution pidgin xchat qbittorrent-y
+apt install evolution pidgin xchat qbittorrent -y
 apt install goobox rhythmbox sound-juicer gnome-sound-recorder totem pavucontrol -y
 apt install synaptic -y
 
