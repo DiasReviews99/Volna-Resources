@@ -47,7 +47,7 @@ echo "Mounting local filesystems..."
 echo "Setting a networking..."
 echo "Starting a hotplug subsystem"
 sleep 2
-echo Setting up ALSA card 0..."
+echo "Setting up ALSA card 0..."
 sleep 5
 echo "Configuring network interfaces..."
 sleep 4
@@ -64,6 +64,6 @@ sleep 1
 clear
 apt update && apt upgrade -y
 clear
-toilet Volna
+toilet -f mono12 -F metal Volna
 mpv /sdcard/scifi.mp3
 bash start-volna.sh
