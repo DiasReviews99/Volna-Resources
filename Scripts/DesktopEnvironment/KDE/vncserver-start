@@ -22,7 +22,7 @@ CHOICE=$(dialog --clear \
 clear
 case $CHOICE in
         1)
-            echo "You chose Gnome"
+            echo "You chose KDE"
             export USER=root
             export HOME=/root
             vncserver -name Volna-K -localhost no :1 -xstartup ~/.vnc/xstartup-kde
