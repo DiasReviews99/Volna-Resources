@@ -36,7 +36,7 @@ dbus-launch --exit-with-session startxfce4 &' > ~/.vnc/xstartup
 
 clear
 echo "====================="
-echo "Running Browser Patch
+echo "Running Browser Patch"
 echo "====================="
 sleep 1
 wget https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Scripts/Fixes/ubchromiumfix.sh && chmod +x ubchromiumfix.sh && bash ubchromiumfix.sh
