@@ -32,7 +32,7 @@ export XAUTHORITY
 LANG=en_US.UTF-8
 export LANG
 echo $$ > /tmp/xsession.pid
-dbus-launch --exit-with-session startxfce4 &' > ~/.vnc/xstartup
+dbus-launch --exit-with-session startxfce4 &' > ~/.Xresources
 
 clear
 echo "====================="
