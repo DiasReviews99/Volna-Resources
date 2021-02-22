@@ -17,7 +17,7 @@ echo "Booting Volna, kernel 2.6.12-9-archurl"
 echo ""
 echo "root hd0.0"
 echo "Filesystem type is ext2fs, partiton type 0x83"
-echo "kernel /boot/vmlinuz-2.6.12-9-archurl root=/dev/hda1 ro quiet splash
+echo "kernel /boot/vmlinuz-2.6.12-9-archurl root=/dev/hda1 ro quiet splash"
 echo "[Linux-bzImage, setup=0x1c00, size=0x124blb]"
 sleep 1
 echo "initrd /boot/initrd.img-2.6.12-9-archurl"
