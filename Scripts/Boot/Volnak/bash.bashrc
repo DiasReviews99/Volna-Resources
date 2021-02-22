@@ -82,5 +82,6 @@ clear
 sleep 5
 echo "Loading..."
 sleep 9
+toilet -f mono12 -F metal Volna-K
 mpv /sdcard/scifi-k.mp3
 bash start-volnak.sh
