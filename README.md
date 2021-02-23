@@ -28,3 +28,14 @@ To install, enter the following commands into the console
 > chmod +x volnak.sh
 
 > bash volnak.sh
+
+# Installing Volna-X
+ATTENTION!!!
+Volna-X Is an add-on for "Volna"
+To install, enter the following commands into the console
+
+> wget https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Scripts/Installer/Volna-X/volnax.sh
+
+> chmod +x volnax.sh
+
+> bash volnax.sh
