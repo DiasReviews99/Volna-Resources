@@ -20,6 +20,13 @@ wget https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Script
 
 chmod +x ~/.vnc/xstartup-xfce
 
+clear
+echo "===================="
+echo "Installing Programms"
+echo "===================="
+sleep 1
+apt install elementary-icon-theme -y
+
 echo "You can now start vncserver by running vncserver-start"
 echo " "
 echo "It will ask you to enter a password when first time starting it."
