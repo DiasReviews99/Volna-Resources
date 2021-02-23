@@ -9,7 +9,8 @@ TITLE="Welcome!"
 MENU="Select a Login Server"
 export PORT=1
 
-OPTIONS=(1 "KDE")
+OPTIONS=(1 "GDM2"
+OPTIONS=2 "Lightdm)
 
 CHOICE=$(dialog --clear \
                 --backtitle "$BACKTITLE" \
