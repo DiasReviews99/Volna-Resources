@@ -15,7 +15,7 @@ wget https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Kernel
 wget https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Scripts/DesktopEnvironment/XFCE/vncserver-start -O /usr/local/bin/vncserver-lightdm
 chmod +x /usr/local/bin/vncserver-gdm2
 chmod +x /usr/local/bin/vncserver-start
-chmod +x /usr/local/bin/vncservee-lightdm
+chmod +x /usr/local/bin/vncserver-lightdm
 clear
 echo "============"
 echo "Settings VNC"
