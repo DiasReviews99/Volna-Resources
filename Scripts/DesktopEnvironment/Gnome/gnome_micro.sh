@@ -7,6 +7,9 @@ sleep 1
 apt install xfce4 -y
 apt install xfce4-terminal -y
 apt install netsurf -y
+
+echo "xfce4-session &" > ~/.vnc/xstartup
+
 clear
 echo "===================="
 echo "Installing Programms"
