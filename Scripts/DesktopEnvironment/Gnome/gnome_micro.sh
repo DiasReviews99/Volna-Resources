@@ -4,6 +4,7 @@ echo "=============================="
 echo "Installing Desktop Environment"
 echo "=============================="
 sleep 1
+apt install tigervnc -y
 apt install xfce4 -y
 apt install xfce4-terminal -y
 apt install netsurf -y
