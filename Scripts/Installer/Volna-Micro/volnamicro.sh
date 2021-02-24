@@ -6,9 +6,9 @@ echo "===================="
 sleep 1
 apt install x11-repo -y
 clear
-echo "=============================="
-echo "Installing Resources for Kernel
-echo "=============================="
+echo "==============================="
+echo "Installing Resources for Kernel"
+echo "==============================="
 sleep 1
 apt install wget -y
 wget https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Kernel_res/Volna-Micro/installFull -O $PREFIX/bin/installFull
