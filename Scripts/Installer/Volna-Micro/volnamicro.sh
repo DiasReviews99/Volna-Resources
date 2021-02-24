@@ -36,4 +36,7 @@ apt install cowsay -y
 apt install nano -y
 apt install ruby -y
 gem install lolcat
-clear
+wget https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Scripts/DesktopEnvironment/Gnome/gnome_micro.sh
+chmod +x gnome_micro.sh
+bash gnome_micro.sh
+rm -rf gnome_micro.sh
