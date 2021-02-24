@@ -1,0 +1,32 @@
+#!/data/data/com.termux/files/usr/bin/bash
+clear
+echo "================="
+echo "Updating Packages"
+echo "================="
+sleep 1
+apt update && apt upgrade -y
+clear
+echo "==============="
+echo "Installing Wget"
+echo "==============="
+sleep 1
+pkg install wget
+clear
+echo "================================="
+echo "Installing Proot and Openssl-tool"
+echo "================================="
+sleep 1
+apt install proot openssl-tool -y && hash -r
+clear
+echo "====================="
+echo "Downloading Installer"
+echo "====================="
+sleep 1
+wget https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Scripts/Installer/Volna/volna.sh
+clear
+echo "================="
+echo "Running Installer"
+echo "================="
+sleep 1
+chmod +x volna.sh
+bash volna.sh
