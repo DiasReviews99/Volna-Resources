@@ -15,6 +15,14 @@ To install, enter the following commands into the console
 
 > bash volna.sh
 
+#Installing Volna-Micro
+To install, enter the following commands into the console
+> wget https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Scripts/Installer/Volna-Micro/volnamicro.sh
+
+> chmod +x volnamicro.sh
+
+> bash volnamicro.sh
+
 # Installing Volna-K
 To install, enter the following commands into the console
 > apt update && apt upgrade -y
