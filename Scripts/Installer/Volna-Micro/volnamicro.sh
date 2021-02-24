@@ -24,7 +24,7 @@ apt install python -y
 apt install python2 -y
 apt install git -y
 pip install lolcat
-apt install mpv
+apt install mpv -y
 termux-setup-storage
 sleep 8
 rm -rf $PREFIX/etc/bash.bashrc
