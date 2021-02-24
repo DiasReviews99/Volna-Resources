@@ -8,6 +8,7 @@ apt install xfce4 -y
 apt install xfce4-terminal -y
 apt install netsurf -y
 
+mdkir -p ~/.vnc
 echo "xfce4-session &" > ~/.vnc/xstartup
 
 clear
