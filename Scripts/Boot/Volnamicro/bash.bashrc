@@ -370,4 +370,4 @@ echo ""
 echo ""
 echo ""
 echo ""
-mpv /sdcard/scifi.mp3
+mpv /sdcard/scifi-micro.mp3
