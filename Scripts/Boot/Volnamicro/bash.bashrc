@@ -371,3 +371,4 @@ echo ""
 echo ""
 echo ""
 mpv /sdcard/scifi-micro.mp3
+clear
