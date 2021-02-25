@@ -1,19 +1,10 @@
 This place is intended for storing scripts, kernels, images, etc. for "Volna"
 
 # Installing Volna
-To install, enter the following commands into the console
+To install "Volna" you must have "Volna Micro" already installed.
+Then just enter the command:
 
-> apt update && apt upgrade -y
-
-> pkg install wget
-
-> apt install openssl-tool proot -y && hash -r
-
-> wget https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Scripts/Installer/Volna/volna.sh
-
-> chmod +x volna.sh
-
-> bash volna.sh
+> installFull
 
 # Installing Volna-Micro
 To install, enter the following commands into the console
