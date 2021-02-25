@@ -8,6 +8,8 @@ apt install tigervnc -y
 apt install xfce4 -y
 apt install xfce4-terminal -y
 apt install netsurf -y
+vncserver
+vncserver -kill :1
 
 mdkir -p ~/.vnc
 echo "xfce4-session &" > ~/.vnc/xstartup
