@@ -6,6 +6,20 @@ Then just enter the command:
 
 > installFull
 
+# Installing Volna-Server
+To install, enter the following commands into the console
+> apt update && apt upgrade -y
+
+> pkg install wget
+
+> apt install openssl-tool proot -y && hash -r
+
+> wget https://raw.githubusercontent.com/DiasReviews99/Volna-Resources/main/Scripts/Installer/Volna-Server/volnaserver.sh
+
+> chmod +x volnaserver.sh
+
+> bash volnaserver.sh
+
 # Installing Volna-Micro
 To install, enter the following commands into the console
 > apt install wget
