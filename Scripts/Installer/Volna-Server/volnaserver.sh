@@ -139,6 +139,7 @@ groupadd --gid 50110 permagrp3
 groupadd --gid 99909997 permagrp4
 groupadd --gid 20195 permagrp5
 groupadd --gid 50195 permagrp6
-touch ~/.hushlogin" > $folder/root/.bash_profile 
+touch ~/.hushlogin
+rm -rf $folder/root/.bash_profile" > $folder/root/.bash_profile 
 
 bash $bin
